@@ -190,5 +190,10 @@ button{
 
 }
 
+.mainwrapper{
+    width: 95%;
+    margin: auto;
+}
+
 
 /*#endregin ---------------------------------------*/
