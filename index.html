@@ -20,14 +20,14 @@
     <nav>
         <div class="links">
             <ul>
-                <li><button id="rover_button" class="merc" onclick="marsRover()"></button> <br>Merkurius</li>
-                <li><button id="rover_button" class="venu" onclick="marsRover()"></button><br>Venus</li>
-                <li><button id="rover_button" class="tell" onclick="marsRover()"></button><br>Tellus</li>
-                <li><button id="rover_button" class="mars" onclick="marsRover()"></button><br>Mars</li>
-                <li><button id="rover_button" class="jupi" onclick="marsRover()"></button><br>Jupiter</li>
-                <li><button id="rover_button" class="satu" onclick="marsRover()"></button><br>Saturnus</li>
-                <li><button id="rover_button" class="uran" onclick="marsRover()"></button><br>Uranus</li>
-                <li><button id="rover_button" class="nept" onclick="marsRover()"></button><br>Neptunus</li>
+                <li><button class="venu" onclick="planetPicker('venus')"></button><br>Venus</li>
+                <li><button class="tell" onclick="planetPicker('tellus')"></button><br>Tellus</li>
+                <li><button class="merc" onclick="planetPicker('merkurius')"></button> <br>Merkurius</li>
+                <li><button class="mars" onclick="planetPicker('mars')"></button><br>Mars</li>
+                <li><button class="jupi" onclick="planetPicker('jupiter')"></button><br>Jupiter</li>
+                <li><button class="satu" onclick="planetPicker('saturnus')"></button><br>Saturnus</li>
+                <li><button class="uran" onclick="planetPicker('uranus')"></button><br>Uranus</li>
+                <li><button class="nept" onclick="planetPicker('neptunus')"></button><br>Neptunus</li>
             </ul>
         </div>
         <div class="date">|1991-05-21|</div>
@@ -46,7 +46,7 @@
             </div>
 
             <section>
-                <img src="img/earth-start.jpg" id="mars_rover">
+                <img src="img/earth-start.jpg" id="start_image">
             </section>
         </div>
     </main>

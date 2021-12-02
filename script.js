@@ -57,7 +57,7 @@ getXML();
 
 // Funktioner för att hämta och visa marsrover
 
-function showMarsRover(url) {
+function showImage(url) {
 
     document.getElementById("start_image").src = url;
 
@@ -65,21 +65,49 @@ function showMarsRover(url) {
 
 }
 
-async function marsRover() {
 
+
+
+async function planetPicker(planet) {
+    switch (planet) {
+        case 'venus':
+            url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${year}-${month}-${day}&api_key=${api_key}`;
+            break;
+        case 'tellus':
+            url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${year}-${month}-${day}&api_key=${api_key}`;
+            break;
+        case 'merkurius':
+            url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${year}-${month}-${day}&api_key=${api_key}`;
+            break;
+        case 'mars':
+            url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${year}-${month}-${day}&api_key=${api_key}`;
+            break;
+        case 'jupiter':
+            url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${year}-${month}-${day}&api_key=${api_key}`;
+            break;
+        case 'saturnus':
+            url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${year}-${month}-${day}&api_key=${api_key}`;
+            break;
+        case 'uranus':
+            url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${year}-${month}-${day}&api_key=${api_key}`;
+            break;
+        case 'neptunus':
+            url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${year}-${month}-${day}&api_key=${api_key}`;
+            break;
+    }
     year = '2015';
 
     month = '06';
 
     day = '03';
 
-    let result = await fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${year}-${month}-${day}&api_key=${api_key}`)
+    let result = await fetch(url)
 
         .then(response => response.json())
 
         .then(data => {
 
-            showMarsRover(data.photos[0].img_src)
+            showImage(data.photos[0].img_src)
 
         });
 
