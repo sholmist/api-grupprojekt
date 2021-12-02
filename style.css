@@ -17,7 +17,7 @@ header{
     display: flex; 
     align-items: center; 
     width: 100%;
-    height: 25vh;
+    height: 30vh;
     background-color: rgb(32, 34, 33);
     background-position: center;
     background-repeat: no-repeat;
@@ -54,6 +54,7 @@ ul{
 }
 
 li{
+    flex:1;
     text-align: center;
     color: white;
 }
@@ -163,3 +164,27 @@ img{
     height: auto;
     margin-bottom: 20px;
 }
+
+
+/*#region ---------------- Allt under 400pc ------*/
+
+@media only screen and (max-width: 360px){
+
+ul{
+    font-size: 10px;
+    display:flex;
+    justify-content:space-around    
+}
+li{
+    
+    display: inline-block;
+    margin: 6%;
+}
+
+button{
+    padding: 14px 14px;
+
+}
+
+
+/*#endregin ---------------------------------------*/
