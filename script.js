@@ -1,6 +1,3 @@
-//API KEY:
-//https://api.nasa.gov/planetary/apod?api_key=CNCFz3LTIegsRtNzARWJShPRpuzRXlCjtC0p1K69
-
 let api_key = 'CNCFz3LTIegsRtNzARWJShPRpuzRXlCjtC0p1K69';
 let year;
 let month;
@@ -18,21 +15,19 @@ function header() {
   };
   xhr.send();
 };
-header();
 //#endregion
 
-function getXML() {
-  let xhr = new XMLHttpRequest();
-  xhr.open('GET', 'https://api.nasa.gov/planetary/apod?api_key=' + api_key);
-  xhr.responseType = 'json';
-  xhr.onload = function () {
-    console.log(xhr.response);
-  };
-  xhr.send();
-}
+// Ska denna vara kvar?
+// function getXML() {
+//   let xhr = new XMLHttpRequest();
+//   xhr.open('GET', 'https://api.nasa.gov/planetary/apod?api_key=' + api_key);
+//   xhr.responseType = 'json';
+//   xhr.onload = function () {
+//     console.log(xhr.response);
+//   };
+//   xhr.send();
+// }
 
-//Körs när js laddas
-getXML();
 
 // Mars
 function showMarsRover(url) {
@@ -48,3 +43,8 @@ async function marsRover() {
   });
   console.log(result);
 }
+
+
+//Körs när js laddas
+getXML();
+header();
