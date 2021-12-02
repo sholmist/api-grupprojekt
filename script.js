@@ -1,2 +1,2 @@
 //API KEY:
-//CNCFz3LTIegsRtNzARWJShPRpuzRXlCjtC0p1K69
+//https://api.nasa.gov/planetary/apod?api_key=CNCFz3LTIegsRtNzARWJShPRpuzRXlCjtC0p1K69
