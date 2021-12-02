@@ -3,6 +3,7 @@
 
 let date = document.getElementById("prev-date");
 
+//Kan möjligen göra initialization en gång
 function getAPOD() {
     let xhr = new XMLHttpRequest();
 
@@ -53,8 +54,10 @@ function randomImg(){
 
 function display(R, D){
     console.log(R);
-    if (R.code == 400) {
-        D.getElementsByTagName("h3")[0].innerText = "Not a valid date"
+
+    //Skriver ut error meddelande
+    if (typeof R.msg !== "undefined") {
+        D.getElementsByTagName("h3")[0].innerText = R.msg;
     }else{
         D.getElementsByTagName("img")[0].src = R.url;
         D.getElementsByTagName("h3")[0].innerText = R.title;
