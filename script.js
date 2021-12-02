@@ -59,7 +59,7 @@ getXML();
 
 function showMarsRover(url) {
 
-    document.getElementById("mars_rover").src = url;
+    document.getElementById("start_image").src = url;
 
     return `visar ${url}`;
 
