@@ -48,3 +48,40 @@ function getXML() {
 
 //Körs när js laddas
 getXML();
+
+
+
+
+
+
+
+// Funktioner för att hämta och visa marsrover
+
+function showMarsRover(url) {
+
+    document.getElementById("mars_rover").src = url;
+
+    return `visar ${url}`;
+
+}
+
+async function marsRover() {
+
+    year = '2015';
+
+    month = '06';
+
+    day = '03';
+
+    let result = await fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${year}-${month}-${day}&api_key=${api_key}`)
+
+        .then(response => response.json())
+
+        .then(data => {
+
+            showMarsRover(data.photos[0].img_src)
+
+        });
+
+    console.log(result);
+}
