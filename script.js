@@ -1,6 +1,12 @@
 //API KEY:
 //https://api.nasa.gov/planetary/apod?api_key=CNCFz3LTIegsRtNzARWJShPRpuzRXlCjtC0p1K69
 
+let api_key = 'CNCFz3LTIegsRtNzARWJShPRpuzRXlCjtC0p1K69';
+let year;
+let month;
+let day;
+
+
 //#region Header
 function header() {
 
