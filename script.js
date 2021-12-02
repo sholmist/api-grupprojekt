@@ -11,7 +11,9 @@ function getAPOD() {
     xhr.responseType = 'json';
 
     xhr.onload = function () {
-        console.log(xhr.response);
+        let div = document.getElementById("apod");
+
+        display(xhr.response, div);
     };
 
     xhr.send();
@@ -25,19 +27,39 @@ date.onchange = function(){
     xhr.responseType = 'json';
 
     xhr.onload = function () {
-        var c = document.getElementById("prev-apod");
+        let div = document.getElementById("prev-apod");
 
-        console.log(xhr.response);
-        if (xhr.response.code == 400) {
-            c.getElementsByTagName("h3")[0].innerText = "Not a valid date"
-        }else{
-            c.getElementsByTagName("img")[0].src = xhr.response.url;
-            c.getElementsByTagName("p")[0].innerText = xhr.response.explanation;
-            c.getElementsByTagName("h3")[0].innerText = xhr.response.title;
-        }
+        display(xhr.response, div);
     };
 
     xhr.send();
+}
+
+function randomImg(){
+    let xhr = new XMLHttpRequest();
+
+    xhr.open('GET', 'https://api.nasa.gov/planetary/apod?count=1&api_key=CNCFz3LTIegsRtNzARWJShPRpuzRXlCjtC0p1K69');
+
+    xhr.responseType = 'json';
+
+    xhr.onload = function () {
+        let div = document.getElementById("random-apod");
+
+        display(xhr.response[0], div);
+    };
+
+    xhr.send();
+}
+
+function display(R, D){
+    console.log(R);
+    if (R.code == 400) {
+        D.getElementsByTagName("h3")[0].innerText = "Not a valid date"
+    }else{
+        D.getElementsByTagName("img")[0].src = R.url;
+        D.getElementsByTagName("h3")[0].innerText = R.title;
+        D.getElementsByTagName("p")[0].innerText = R.explanation;
+    }
 }
 
 //Körs när js laddas
