@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,9 +8,50 @@
     <link rel="stylesheet" href="style.css">
     <title>API Bluescreen</title>
 </head>
+
 <body>
 
-    <h1>HEJHEJHEJHEJ x</h1>
+    <header>
+        <div class="headerbg">
+            <h1 class="rubrik">Blue Screen</h1>
+        </div>
+    </header>
+
+    <nav>
+        <div class="links">
+            <ul>
+                <li><button id="rover_button" class="merc" onclick="marsRover()"></button> <br>Merkurius</li>
+                <li><button id="rover_button" class="venu" onclick="marsRover()"></button><br>Venus</li>
+                <li><button id="rover_button" class="tell" onclick="marsRover()"></button><br>Tellus</li>
+                <li><button id="rover_button" class="mars" onclick="marsRover()"></button><br>Mars</li>
+                <li><button id="rover_button" class="jupi" onclick="marsRover()"></button><br>Jupiter</li>
+                <li><button id="rover_button" class="satu" onclick="marsRover()"></button><br>Saturnus</li>
+                <li><button id="rover_button" class="uran" onclick="marsRover()"></button><br>Uranus</li>
+                <li><button id="rover_button" class="nept" onclick="marsRover()"></button><br>Neptunus</li>
+            </ul>
+        </div>
+        <div class="date">|1991-05-21|</div>
+        <hr>
+    </nav>
+
+    <main>
+        <div class="mainwrapper">
+
+            <div class="intro">
+                <h1>Welcome to the most awesome website...<br>IN THE ENTIRE UNIVERSE!</h1>
+                <p>On the very top you can select a specific date to generate a random picture from various planets in
+                    our
+                    solar system. Select a date and click on the planet you wish to explore. May the force be with you!
+                </p>
+            </div>
+
+            <section>
+                <img src="img/earth-start.jpg" id="mars_rover">
+            </section>
+        </div>
+    </main>
+
     <script src="script.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,165 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/*#region header*/
+
+header{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.headerbg{  
+  display: flex; 
+  align-items: center; 
+  width: 100%;
+  height: 25vh;
+  background-color: rgb(32, 34, 33);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation: zoom-in-zoom-out 30s ease-out infinite;
+}
+
+.rubrik{ 
+  text-align: center;
+  margin:0 auto;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  font-size: 8vw;
+  z-index: 1;
+  animation: shake 20s alternate-reverse;
+  animation-iteration-count:infinite;
+}
+
+.links{
+  width: 100%;
+  min-height: 30px;
+  height: auto;
+  background-color: rgb(18, 19, 18);
+  padding: 10px 0px;
+}
+
+ul{
+  font-size: 12px;
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+li{
+  text-align: center;
+  color: white;
+}
+
+button{
+  padding: 20px 20px;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  transition: 0.8s;
+  text-transform: uppercase;
+  background-color: rgb(246, 246, 246);
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  margin-bottom: 8px;
+}
+
+/*#region Planeter färger */
+
+.merc{
+  background-image: linear-gradient(to bottom right, red , yellow);
+}
+.venu{
+  background-image: linear-gradient(to bottom right, rgb(54, 30, 13) , rgb(209, 147, 108));
+}
+.tell{
+  background-image: linear-gradient(to bottom right, rgb(53, 163, 20) , rgb(149, 225, 238));
+}
+.mars{
+  background-image: linear-gradient(to bottom right, rgb(42, 8, 8) , rgb(221, 54, 24));
+}
+.jupi{
+  background-image: linear-gradient(to bottom right, rgb(49, 45, 42) , rgb(187, 154, 133));
+}
+.satu{
+  background-image: linear-gradient(to bottom right, rgb(211, 159, 47) , rgb(241, 214, 178));
+}
+.uran{
+  background-image: linear-gradient(to bottom right, rgb(40, 90, 73) , rgb(94, 223, 195));
+}
+.nept{
+  background-image: linear-gradient(to bottom right, rgb(43, 67, 71) , rgb(159, 200, 178));
+}
+
+/*#endregion ---------------------------------------------------------------------------------------*/
+
+a:hover{
+  background-color: rgb(70, 70, 70);
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-3deg); }
+  20% { transform: translate(-3px, -1px) rotate(0deg); }
+  30% { transform: translate(3px, 2px) rotate(3deg); }
+  40% { transform: translate(1px, 1px) rotate(0deg); }
+  50% { transform: translate(-1px, 2px) rotate(-3deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(1px, 1px) rotate(3deg); }
+  80% { transform: translate(-1px, -1px) rotate(0deg); }
+  90% { transform: translate(1px, 2px) rotate(-3deg); }
+  100% { transform: translate(1px, 0px) rotate(2deg); }
+}
+
+@keyframes zoom-in-zoom-out {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.2, 1.2);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+/*#endregion header*/
+
+.mainwrapper{
+  width: 80%;
+  margin: auto;
+}
+
+.date{
+  text-align: center;
+  font-size: 25px;
+  font-weight: 800;
+  color: rgb(0, 0, 0);
+  padding: 6px;
+}
+
+.intro{
+  text-align: center;
+  font-size: 1rem;
+  margin: 2rem;
+}
+
+section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+img{
+  max-width: 1500px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
