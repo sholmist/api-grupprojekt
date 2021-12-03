@@ -65,6 +65,8 @@ function tellusEpic() {
         }
         else {
             console.log(xhr.response);
+            document.querySelector(".lat").innerText = "Latitude: " + xhr.response[0].centroid_coordinates.lat;
+            document.querySelector(".lon").innerText = "Longitude: " + xhr.response[0].centroid_coordinates.lon;
             document.getElementById("image-title").innerText = xhr.response.date;
             document.getElementById("image-text").innerText = xhr.response.caption;
             document.getElementById("start-image").src = "https://epic.gsfc.nasa.gov/archive/natural/" + date[0] + "/" + date[1] + "/" + date[2] + "/png/" + xhr.response[0].image + ".png";
