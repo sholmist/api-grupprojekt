@@ -1,7 +1,6 @@
 let api_key = 'CNCFz3LTIegsRtNzARWJShPRpuzRXlCjtC0p1K69';
-let year;
-let month;
-let day;
+let stringdate = document.getElementById("date");
+let date;
 
 //#region Header
 function header() {
@@ -16,6 +15,11 @@ document.querySelector(".headerbg").style.backgroundImage = "url('" + xhr.respon
 };
 header();
 //#endregion
+
+stringdate.onchange = function{
+    date = stringdate.split("-");
+    console.log(date);
+}
 
 // MARS
 async function marsRover() {
