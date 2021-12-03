@@ -51,7 +51,6 @@ async function marsRover() {
             }
             
         })
-        .catch(error => document.getElementById("image-title").innerText = 'There has been a problem with your fetch operation:' + error);
             
     console.log(`result: ${result}`);
 }
