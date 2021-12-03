@@ -126,11 +126,26 @@ function planeter(planet) {
     }
 }
 
-function apodApi(){
-    let xhr = new XMLHttpRequest();
-    let apodDate = date[0] + "-" + date[1] + "-" + date[2];
+//Bestämmer vilken info som ska hämtas från APOD Api
+function apod(N) {
+    let apod_key;
+    if (N == 0) {
+        let apodDate = date[0] + "-" + date[1] + "-" + date[2];
+        apod_key = "https://api.nasa.gov/planetary/apod?date=" + apodDate + "&api_key=CNCFz3LTIegsRtNzARWJShPRpuzRXlCjtC0p1K69";
+        apodApi(apod_key);
+    }
+    else if (N == 1) {
+        apod_key = "https://api.nasa.gov/planetary/apod?count=1&api_key=CNCFz3LTIegsRtNzARWJShPRpuzRXlCjtC0p1K69";
+        apodApi(apod_key);
+    }
+}
 
-    xhr.open('GET', 'https://api.nasa.gov/planetary/apod?date=' + apodDate + '&api_key=CNCFz3LTIegsRtNzARWJShPRpuzRXlCjtC0p1K69');
+//Hämtar info från APOD api
+function apodApi(str) {
+    let response;
+    let xhr = new XMLHttpRequest();
+
+    xhr.open('GET', str);
 
     xhr.responseType = 'json';
 
@@ -140,32 +155,12 @@ function apodApi(){
         //Skriver ut error meddelande
         if (typeof xhr.response.msg !== "undefined") {
             document.querySelector(".intro h1").innerText = xhr.response.msg;
-        }else{
-            document.querySelector("#start-image").src = xhr.response.url;
-            document.querySelector(".intro h1").innerText = xhr.response.title;
-            document.querySelector(".intro p").innerText = xhr.response.explanation;
-        }
-    };
-
-    xhr.send();
-}
-
-function randomApod(){
-    let xhr = new XMLHttpRequest();
-
-    xhr.open('GET', 'https://api.nasa.gov/planetary/apod?count=1&api_key=CNCFz3LTIegsRtNzARWJShPRpuzRXlCjtC0p1K69');
-
-    xhr.responseType = 'json';
-
-    xhr.onload = function () {
-        console.log(xhr.response);
-
-        //Skriver ut error meddelande
-        if (typeof xhr.response.msg !== "undefined") {
-            document.querySelector(".intro h1").innerText = xhr.response[0].msg;
-        }else{
-            document.querySelector("#start-image").src = xhr.response[0].url;
-            document.querySelector(".intro h1").innerText = xhr.response[0].title;
+        } else {
+            if (Array.isArray(xhr.response) != true) { response = xhr.response; }
+            else { response = xhr.response[0]; }
+            document.querySelector("#start-image").src = response.url;
+            document.querySelector(".intro h1").innerText = response.title;
+            document.querySelector(".intro p").innerText = response.explanation;
         }
     };
 
