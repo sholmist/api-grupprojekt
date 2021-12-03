@@ -139,3 +139,44 @@ function planeter(planet) {
         document.querySelector(".lon").innerText = "Orbital period: 687 days"
     }
 }
+
+//Bestämmer vilken info som ska hämtas från APOD Api
+function apod(N) {
+    let apod_key;
+    if (N == 0) {
+        let apodDate = date[0] + "-" + date[1] + "-" + date[2];
+        apod_key = "https://api.nasa.gov/planetary/apod?date=" + apodDate + "&api_key=CNCFz3LTIegsRtNzARWJShPRpuzRXlCjtC0p1K69";
+        apodApi(apod_key);
+    }
+    else if (N == 1) {
+        apod_key = "https://api.nasa.gov/planetary/apod?count=1&api_key=CNCFz3LTIegsRtNzARWJShPRpuzRXlCjtC0p1K69";
+        apodApi(apod_key);
+    }
+}
+
+//Hämtar info från APOD api
+function apodApi(str) {
+    let response;
+    let xhr = new XMLHttpRequest();
+
+    xhr.open('GET', str);
+
+    xhr.responseType = 'json';
+
+    xhr.onload = function () {
+        console.log(xhr.response);
+
+        //Skriver ut error meddelande
+        if (typeof xhr.response.msg !== "undefined") {
+            document.querySelector(".intro h1").innerText = xhr.response.msg;
+        } else {
+            if (Array.isArray(xhr.response) != true) { response = xhr.response; }
+            else { response = xhr.response[0]; }
+            document.querySelector("#start-image").src = response.url;
+            document.querySelector(".intro h1").innerText = response.title;
+            document.querySelector(".intro p").innerText = response.explanation;
+        }
+    };
+
+    xhr.send();
+}
