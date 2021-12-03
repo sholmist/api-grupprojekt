@@ -46,9 +46,8 @@ async function marsRover() {
                 document.getElementById("image-text").innerText = date;
             }
             else {
-                document.getElementById("start-image").src = '';
-                document.getElementById("image-text").innerText = date;
-                document.getElementById("image-title").innerText = 'There is no picture from chosen date. Please, try again.';
+                document.getElementById("error_date").innerText = date;
+                document.getElementById("error_message").innerText = 'There is no picture from chosen date. Please, try again.';
             }
             
         })
