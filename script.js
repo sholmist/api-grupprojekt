@@ -59,9 +59,6 @@ async function marsRover() {
 
 //TELLUS
 function tellusEpic() {
-    // let year = "2020";
-    // let month = '11';
-    // let day = '25';
     let xhr = new XMLHttpRequest();
     let pickedDate = document.querySelector("#date").value;
 
