@@ -1,6 +1,16 @@
 let api_key = 'CNCFz3LTIegsRtNzARWJShPRpuzRXlCjtC0p1K69';
 let stringdate = document.getElementById("date");
-let date = [];
+
+//Skriva ut dagens datum i date
+let today = new Date();
+let date = [today.getFullYear(),today.getMonth() + 1,today.getDate()];
+
+if (date[2] < 10) {
+    stringdate.value = date[0] + "-" + date[1] + "-0" + date[2];
+}
+else{
+    stringdate.value = date[0] + "-" + date[1] + "-" + date[2];
+}
 
 //#region Header
 function header() {
@@ -24,13 +34,13 @@ stringdate.onchange = function(){
 
 // MARS
 async function marsRover() {
-    year = '2015';
-    month = '12';
-    day = '11';
+    // year = '2015';
+    // month = '12';
+    // day = '11';
     let bild;
-       let result = await fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${year}-${month}-${day}&api_key=${api_key}`)
+       let result = await fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${date[0]}-${date[1]}-${date[2]}&api_key=${api_key}`)
         .then(response => response.json())
-        .then(data => document.getElementById("start_image").src = data.photos[0].img_src);
+        .then(data => document.getElementById("start-image").src = data.photos[0].img_src);
             
     console.log(`result: ${result}`);
 }
