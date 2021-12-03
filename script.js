@@ -42,7 +42,17 @@ async function marsRover() {
     let bild;
        let result = await fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${date[0]}-${date[1]}-${date[2]}&api_key=${api_key}`)
         .then(response => response.json())
-        .then(data => document.getElementById("start-image").src = data.photos[0].img_src);
+        .then(data => {
+            console.log(data);
+            if (data.photos.length > 0) {
+                document.getElementById("start-image").src = data.photos[0].img_src;
+            }
+            else {
+                document.getElementById("image-title").innerText = 'Det finns ingen bild att se från det valda datumet. Prova igen';
+            }
+            
+        })
+        .catch(error => document.getElementById("image-title").innerText = 'There has been a problem with your fetch operation:' + error);
             
     console.log(`result: ${result}`);
 }
