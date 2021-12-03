@@ -30,23 +30,17 @@ async function marsRover() {
     console.log(`result: ${result}`);
 }
 
-
-// let year = "2020";
-// let month = '05';
-// let day = '25';
-
+//TELLUS
 function tellusEpic() {
+    let year = "2020";
+    let month = '05';
+    let day = '25';
     let xhr = new XMLHttpRequest();
     let pickedDate = document.querySelector("#date").value;
 
     xhr.open("GET", "https://api.nasa.gov/EPIC/api/natural/date/" + year + "-" + month + "-" + day + "?api_key=" + api_key);
     
     xhr.responseType = "json";
-
-    document.querySelector("img").onload = function() {
-        
-    }
-
     xhr.onload = function() {
         if (xhr.response.code == 400) {
             document.querySelector("h1").innerText = "Ogiltigt datum";
@@ -55,7 +49,6 @@ function tellusEpic() {
         else {
             console.log(xhr.response);
             document.querySelector("img").src = "https://epic.gsfc.nasa.gov/archive/natural/" +  year + "/" + month + "/" + day + "/png/" + xhr.response[0].image + ".png";
-
         }
     };
     xhr.send();
