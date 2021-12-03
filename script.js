@@ -124,5 +124,18 @@ function planeter(planet) {
         document.querySelector(".lat").innerText = "Surface: 7,618×10^9 km²"
         document.querySelector(".lon").innerText = "Orbital period: 165 years"
     }
-
+    if (planet == 6) {
+        document.querySelector(".intro h1").innerText = "Tellus"
+        document.querySelector(".intro p").innerText = "Our home planet is the third planet from the Sun, and the only place we know of so far that’s inhabited by living things. While Earth is only the fifth largest planet in the solar system, it is the only world in our solar system with liquid water on the surface. Just slightly larger than nearby Venus, Earth is the biggest of the four planets closest to the Sun, all of which are made of rock and metal. The name Earth is at least 1,000 years old. All of the planets, except for Earth, were named after Greek and Roman gods and goddesses. However, the name Earth is a Germanic word, which simply means “the ground.” With a radius of 3,959 miles (6,371 kilometers), Earth is the biggest of the terrestrial planets and the fifth largest planet overall. From an average distance of 93 million miles (150 million kilometers), Earth is exactly one astronomical unit away from the Sun because one astronomical unit (abbreviated as AU), is the distance from the Sun to Earth. This unit provides an easy way to quickly compare planets' distances from the Sun. It takes about eight minutes for light from the Sun to reach our planet."
+        document.querySelector("#start-image").src = "img/earth-start.jpg"
+        document.querySelector(".lat").innerText = "Surface: 148 900 000 km²"
+        document.querySelector(".lon").innerText = "Orbital period: 365 days"
+    }
+    if (planet == 7) {
+        document.querySelector(".intro h1").innerText = "Mars"
+        document.querySelector(".intro p").innerText = "Mars is the fourth planet from the Sun – a dusty, cold, desert world with a very thin atmosphere. Mars is also a dynamic planet with seasons, polar ice caps, canyons, extinct volcanoes, and evidence that it was even more active in the past. Mars is one of the most explored bodies in our solar system, and it's the only planet where we've sent rovers to roam the alien landscape. NASA currently has two rovers (Curiosity and Perseverance), one lander (InSight), and one helicopter (Ingenuity) exploring the surface of Mars. Perseverance rover – the largest, most advanced rover NASA has sent to another world – touched down on Mars on Feb. 18, 2021, after a 203-day journey traversing 293 million miles (472 million kilometers). The Ingenuity helicopter rode to Mars attached to the belly of Perseverance. Perseverance is one of three spacecraft that arrived at Mars in 2021. The Hope orbiter from the United Arab Emirates arrived on Feb. 9, 2021. China’s Tianwen-1 mission arrived on Feb. 10, 2021, and includes an orbiter, a lander, and a rover. Europa and India also have spacecraft studying Mars from orbit. In May 2021, China became the second nation to ever land successfully on Mars when its Zhurong Mars rover touched down. An international fleet of eight orbiters is studying the Red Planet from above including three NASA orbiters: 2001 Mars Odyssey, Mars Reconnaissance Orbiter, and MAVEN. These robotic explorers have found lots of evidence that Mars was much wetter and warmer, with a thicker atmosphere, billions of years ago."
+        document.querySelector("#start-image").src = "img/mars.png"
+        document.querySelector(".lat").innerText = "Surface: 144 800 000 km²"
+        document.querySelector(".lon").innerText = "Orbital period: 687 days"
+    }
 }
