@@ -48,7 +48,8 @@ function tellusEpic() {
         }
         else {
             console.log(xhr.response);
-            document.querySelector("img").src = "https://epic.gsfc.nasa.gov/archive/natural/" +  year + "/" + month + "/" + day + "/png/" + xhr.response[0].image + ".png";
+            document.querySelector("#start_image").src = "https://epic.gsfc.nasa.gov/archive/natural/" +  year + "/" + month + "/" + day + "/png/" + xhr.response[0].image + ".png";
+
         }
     };
     xhr.send();
