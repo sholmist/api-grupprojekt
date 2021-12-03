@@ -130,6 +130,7 @@ function planeter(planet) {
         document.querySelector("#start-image").src = "img/earth-start.jpg"
         document.querySelector(".lat").innerText = "Surface: 148 900 000 km²"
         document.querySelector(".lon").innerText = "Orbital period: 365 days"
+        tellusEpic();
     }
     if (planet == 7) {
         document.querySelector(".intro h1").innerText = "Mars"
@@ -137,6 +138,7 @@ function planeter(planet) {
         document.querySelector("#start-image").src = "img/mars.png"
         document.querySelector(".lat").innerText = "Surface: 144 800 000 km²"
         document.querySelector(".lon").innerText = "Orbital period: 687 days"
+        marsRover();
     }
 }
 
