@@ -17,12 +17,12 @@ document.querySelector(".headerbg").style.backgroundImage = "url('" + xhr.respon
 header();
 //#endregion
 
-// Funktioner för att hämta och visa marsrover
+// visa bilder
 function showImage(url) {
     document.getElementById("start_image").src = url;
     return `visar ${url}`;
 }
-
+// send request
 async function planetPicker(planet) {
     year = '2015';
     month = '06';
