@@ -17,7 +17,7 @@ header{
     display: flex; 
     align-items: center; 
     width: 100%;
-    height: 30vh;
+    height: 25vh;
     background-color: rgb(32, 34, 33);
     background-position: center;
     background-repeat: no-repeat;
@@ -39,7 +39,6 @@ header{
 .links{
     width: 100%;
     min-height: 30px;
-    height: auto;
     background-color: rgb(18, 19, 18);
     padding: 10px 0px;
 }
@@ -179,8 +178,7 @@ ul{
     display:flex;
     justify-content:space-around    
 }
-li{
-    
+li{    
     display: inline-block;
     margin: 6%;
 }
@@ -193,6 +191,13 @@ button{
 .mainwrapper{
     width: 95%;
     margin: auto;
+}
+
+h1{
+    font-size: 20px;
+}
+p{
+    font-size: 14px;
 }
 
 
