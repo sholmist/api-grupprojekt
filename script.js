@@ -1,6 +1,6 @@
 let api_key = 'CNCFz3LTIegsRtNzARWJShPRpuzRXlCjtC0p1K69';
 let stringdate = document.getElementById("date");
-let date;
+let date = [];
 
 //#region Header
 function header() {
@@ -16,8 +16,9 @@ document.querySelector(".headerbg").style.backgroundImage = "url('" + xhr.respon
 header();
 //#endregion
 
-stringdate.onchange = function{
-    date = stringdate.split("-");
+//Uppdatterar date när datumväljar ändras
+stringdate.onchange = function(){
+    date = stringdate.value.split("-");
     console.log(date);
 }
 
@@ -36,24 +37,25 @@ async function marsRover() {
 
 //TELLUS
 function tellusEpic() {
-    let year = "2020";
-    let month = '11';
-    let day = '25';
+    // let year = "2020";
+    // let month = '11';
+    // let day = '25';
     let xhr = new XMLHttpRequest();
     let pickedDate = document.querySelector("#date").value;
 
-    xhr.open("GET", "https://api.nasa.gov/EPIC/api/natural/date/" + year + "-" + month + "-" + day + "?api_key=" + api_key);
+    xhr.open("GET", "https://api.nasa.gov/EPIC/api/natural/date/" + date[0] + "-" + date[1] + "-" + date[2] + "?api_key=" + api_key);
     
     xhr.responseType = "json";
     xhr.onload = function() {
-        if (xhr.response.code == 400) {
-            document.querySelector("h1").innerText = "Ogiltigt datum";
-            document.querySelector("p").innerText = "Välj ett annat";
+        if (xhr.response.length == 0) {
+            document.getElementById("image-title").innerText = "Ogiltigt datum";
+            document.getElementById("image-text").innerText = "Välj ett annat";
         }
         else {
             console.log(xhr.response);
-            document.querySelector("#start_image").src = "https://epic.gsfc.nasa.gov/archive/natural/" +  year + "/" + month + "/" + day + "/png/" + xhr.response[0].image + ".png";
-
+            document.getElementById("image-title").innerText = xhr.response.date;
+            document.getElementById("image-text").innerText = xhr.response.caption;
+            document.getElementById("start-image").src = "https://epic.gsfc.nasa.gov/archive/natural/" +  date[0] + "/" + date[1] + "/" + date[2] + "/png/" + xhr.response[0].image + ".png";
         }
     };
     xhr.send();
