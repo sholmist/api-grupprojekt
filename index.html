@@ -20,9 +20,9 @@
     <nav>
         <div class="links">
             <ul>
+                <li><button class="merc plan" onclick="planeter(1)"></button><br>Mercury</li>
                 <li><button class="venu plan" onclick="planeter(0)"></button><br>Venus</li>
                 <li><button class="tell plan" onclick="planeter(6)"></button><br>Tellus</li>
-                <li><button class="merc plan" onclick="planeter(1)"></button><br>Mercury</li>
                 <li><button class="mars plan" onclick="planeter(7)"></button><br>Mars</li>
                 <li><button class="jupi plan" onclick="planeter(2)"></button><br>Jupiter</li>
                 <li><button class="satu plan" onclick="planeter(3)"></button><br>Saturn</li>
@@ -31,8 +31,10 @@
             </ul>
         </div>
         <div class="date">
-            <button id="previous-apod" class="apod" onclick="apod(0)">Previous picture of the day</button>
-            <button id="random-apod" class="apod" onclick="apod(1)">Random picture of the day</button>
+            <button id="previous-apod" class="apod" onclick="apod(0)">Yesterday</button>
+            <button id="random-apod" class="apod" onclick="apod(1)">Random</button>
+        </div>
+        <div class="datebox">
             <input id="date" type="date">
         </div>
         <hr>
@@ -40,17 +42,16 @@
 
     <main>
         <div class="mainwrapper">
-<div class="error">
-                <h1 id="error_title"></h1>
+            <div class="error hidden">
+                <h3 id="error_title"></h3>
                 <p id="error_text"></p>
-</div>
+            </div>
             <div class="intro">
                 <h1 id="image-title">Welcome to the most awesome website...<br>IN THE ENTIRE UNIVERSE!</h1>
                 <br>
                 <p id="image-text">On the very top you can select a specific date to generate a random picture from
-                    various planets in
-                    our
-                    solar system. Select a date and click on the planet you wish to explore. May the force be with you!
+                    planet Mars and Tellus. Select a date and click on the planet you wish to explore. You may also use
+                    the Yesterday and Random button to generate a "Picture of the day". May the force be with you!
                 </p>
             </div>
 
@@ -58,7 +59,7 @@
 
             <section class="planet">
                 <img src="img/earth-start.jpg" id="start-image">
-                
+
                 <section class="coords">
                     <p class="lat"></p>
                     <p class="lon"></p>
