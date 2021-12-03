@@ -44,6 +44,7 @@ function tellusEpic() {
     xhr.responseType = "json";
 
     document.querySelector("img").onload = function() {
+        
     }
 
     xhr.onload = function() {
