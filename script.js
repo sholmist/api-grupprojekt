@@ -24,6 +24,9 @@ function showImage(url) {
 }
 
 async function planetPicker(planet) {
+    year = '2015';
+    month = '06';
+    day = '03';
     switch (planet) {
         case 'venus':
             url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${year}-${month}-${day}&api_key=${api_key}`;
@@ -50,9 +53,6 @@ async function planetPicker(planet) {
             url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${year}-${month}-${day}&api_key=${api_key}`;
             break;
     }
-    year = '2015';
-    month = '06';
-    day = '03';
     let result = await fetch(url)
         .then(response => response.json())
         .then(data => {
