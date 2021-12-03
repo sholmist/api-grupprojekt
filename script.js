@@ -62,6 +62,9 @@ function tellusEpic() {
         if (xhr.response.length == 0) {
             document.getElementById("image-title").innerText = "Ogiltigt datum";
             document.getElementById("image-text").innerText = "Välj ett annat";
+            document.getElementById("start-image").src = "img/earth-start.jpg";
+            document.querySelector(".lat").innerText = "";
+            document.querySelector(".lon").innerText = "";
         }
         else {
             console.log(xhr.response);
