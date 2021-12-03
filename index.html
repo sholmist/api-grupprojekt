@@ -21,7 +21,7 @@
         <div class="links">
             <ul>
                 <li><button class="venu" ></button><br>Venus</li>
-                <li><button class="tell" ></button><br>Tellus</li>
+                <li><button class="tell" onclick="tellusEpic()"></button><br>Tellus</li>
                 <li><button class="merc" ></button> <br>Merkurius</li>
                 <li><button class="mars" onclick="marsRover()"></button><br>Mars</li>
                 <li><button class="jupi" ></button><br>Jupiter</li>
@@ -30,7 +30,9 @@
                 <li><button class="nept" ></button><br>Neptunus</li>
             </ul>
         </div>
-        <div class="date">|1991-05-21|</div>
+        <div class="date"><input id="date" type="date">
+            <button onclick="pickADate()" id="knapp">Välj</button>
+        </div>
         <hr>
     </nav>
 
