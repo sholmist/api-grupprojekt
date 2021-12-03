@@ -58,7 +58,7 @@ li{
     color: white;
 }
 
-button{
+.plan{
     padding: 20px 20px;
     color: rgb(0, 0, 0);
     text-decoration: none;
@@ -133,7 +133,7 @@ a:hover{
   /*#endregion header*/
 
 .mainwrapper{
-    width: 80%;
+    width: 70%;
     margin: auto;
 }
 
@@ -145,10 +145,16 @@ a:hover{
     padding: 6px;
 }
 
+.apod{
+    display:inline-block;
+    margin: auto;
+}
+
 .intro{
     text-align: center;
     font-size: 1rem;
-    margin: 2rem;
+    margin: 1rem 0;
+    margin-bottom: 4px;
 }
 
 section{
@@ -158,10 +164,31 @@ section{
 }
 
 img{
-    max-width: 1500px;
+    max-width: 800px;
     width: 100%;
     height: auto;
-    margin-bottom: 20px;
+    margin: 20px;
+    margin-bottom: 2px;
+    border-radius: 12px;
+}
+
+.coords{
+    display: inline;
+}
+
+.planet{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+button{
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: white;
+    background-color: rgb(18, 19, 18);
+    border: grey;
+    cursor: pointer;
 }
 
 
@@ -183,7 +210,7 @@ li{
     margin: 6%;
 }
 
-button{
+.plan{
     padding: 14px 14px;
 
 }

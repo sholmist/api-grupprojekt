@@ -20,17 +20,19 @@
     <nav>
         <div class="links">
             <ul>
-                <li><button class="venu" ></button><br>Venus</li>
-                <li><button class="tell" onclick="tellusEpic()"></button><br>Tellus</li>
-                <li><button class="merc" ></button> <br>Merkurius</li>
-                <li><button class="mars" onclick="marsRover()"></button><br>Mars</li>
-                <li><button class="jupi" ></button><br>Jupiter</li>
-                <li><button class="satu" ></button><br>Saturnus</li>
-                <li><button class="uran" ></button><br>Uranus</li>
-                <li><button class="nept" ></button><br>Neptunus</li>
+                <li><button class="venu plan" onclick="planeter(0)"></button><br>Venus</li>
+                <li><button class="tell plan" onclick="tellusEpic()"></button><br>Tellus</li>
+                <li><button class="merc plan" onclick="planeter(1)"></button><br>Mercury</li>
+                <li><button class="mars plan" onclick="marsRover()"></button><br>Mars</li>
+                <li><button class="jupi plan" onclick="planeter(2)"></button><br>Jupiter</li>
+                <li><button class="satu plan" onclick="planeter(3)"></button><br>Saturn</li>
+                <li><button class="uran plan" onclick="planeter(4)"></button><br>Uranus</li>
+                <li><button class="nept plan" onclick="planeter(5)"></button><br>Neptune</li>
             </ul>
         </div>
         <div class="date">
+            <button class="apod">Picture of the day</button>
+            <button class="apod">Picture of the day</button>
             <input id="date" type="date">
         </div>
         <hr>
@@ -40,16 +42,23 @@
         <div class="mainwrapper">
 
             <div class="intro">
-                <h1>Welcome to the most awesome website...<br>IN THE ENTIRE UNIVERSE!</h1>
+                <h1 id="image-title">Welcome to the most awesome website...<br>IN THE ENTIRE UNIVERSE!</h1>
                 <br>
-                <p>On the very top you can select a specific date to generate a random picture from various planets in
+                <p id="image-text">On the very top you can select a specific date to generate a random picture from
+                    various planets in
                     our
                     solar system. Select a date and click on the planet you wish to explore. May the force be with you!
                 </p>
             </div>
 
-            <section>
-                <img src="img/earth-start.jpg" id="start_image">
+
+
+            <section class="planet">
+                <img src="img/earth-start.jpg" id="start-image">
+                <section class="coords">
+                    <p class="lat"></p>
+                    <p class="lon"></p>
+                </section>
             </section>
         </div>
     </main>
