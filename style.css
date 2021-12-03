@@ -58,7 +58,7 @@ li{
     color: white;
 }
 
-button{
+.plan{
     padding: 20px 20px;
     color: rgb(0, 0, 0);
     text-decoration: none;
@@ -145,6 +145,11 @@ a:hover{
     padding: 6px;
 }
 
+.apod{
+    display:inline-block;
+    margin: auto;
+}
+
 .intro{
     text-align: center;
     font-size: 1rem;
@@ -177,6 +182,15 @@ img{
     margin-bottom: 30px;
 }
 
+button{
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: white;
+    background-color: rgb(18, 19, 18);
+    border: grey;
+    cursor: pointer;
+}
+
 
 /*#region ---------------- Allt under 400pc ------*/
 
@@ -196,7 +210,7 @@ li{
     margin: 6%;
 }
 
-button{
+.plan{
     padding: 14px 14px;
 
 }
